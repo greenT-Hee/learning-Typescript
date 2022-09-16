@@ -1,12 +1,12 @@
-interface User {
-    age: number,
-    name: string
-}
 
 // 변수에 활용한 인터페이스
 let taehee : User = {
     age: 26, 
     name: '태희'
+}
+interface User {
+    age: number,
+    name: string
 }
 
 // 함수에 인터페이스 활용 
