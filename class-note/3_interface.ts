@@ -26,8 +26,8 @@ interface SumFunc {
     (a: number, b:number) : number
 }
 
-let sum : SumFunc;
-sum = function(a: number, b:number) :number  {
+let summ : SumFunc;
+summ = function(a: number, b:number) :number  {
     return a+b;
 }
 
@@ -59,17 +59,17 @@ Object.keys(obj).forEach(function(value) {
 
 // 인터페이스 확장 (상속)
 
-interface Person {
-    name: string,
-    age: number,
+interface Personnn {
+    name: string;
+    age: number;
 }
 
-interface Developer extends Person {
+interface Developer extends Personnn {
     language: string
 }
 
 let josh : Developer = {
-    language: 'TS',
     name: '조시',
-    age: 100
+    age: 100,
+    language: 'TS',
 }
