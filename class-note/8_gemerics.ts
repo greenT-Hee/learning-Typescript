@@ -50,3 +50,65 @@ const str = logText<string>('abc')
 str.split('')
 
 const login = logText<boolean>(true)
+
+
+// 인터페이스에 제네릭을 선언하는 방법 
+interface Dropdown1 {
+    value: string;
+    selected: boolean;
+}
+
+const obj : Dropdown1 = {
+    value: 'hello', 
+    selected: false
+}
+
+interface Dropdown2<T> {
+    value: T;
+    selected: boolean
+}
+
+const obj1 : Dropdown2<string> = {
+    value : 'hello', 
+    selected: true,
+}
+
+// 제네릭의 타입 제한 1
+function logTextLength<T>(text: T[]) : T[] {
+    console.log(text.length);
+    text.forEach(item => {
+        console.log(item)
+    })
+    return text
+}
+
+logTextLength<string>(['hi', 'hello'])
+
+// 제네릭 타입 제한2 - 정의된 타입 이용하기
+interface LenthType {
+    length: number;
+}
+
+function logTextLength1<T extends LenthType>(text: T) :T {
+    text.length
+    return text
+}
+
+logTextLength1('hello')
+// logTextLength1(10) // error 
+logTextLength1({length : 10})
+
+// 제네릭 타입 제한 3 - key of
+interface ShooingItem {
+    name: string;
+    price: number;
+    stock: number;
+}
+
+function getShoppingItemOption<T extends keyof ShooingItem>(option : T): T{
+    return option
+}
+// getShoppingItemOption(10)
+// getShoppingItemOption<string>('shoes')
+getShoppingItemOption("name")
+getShoppingItemOption("stock")
