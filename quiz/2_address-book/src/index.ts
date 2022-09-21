@@ -108,4 +108,9 @@ class AddressBook {
   /* ------------------------------------------------ */
 }
 
+let div = document.querySelector('#app') as HTMLDivElement;
+// if(div) {
+  div.innerText;
+// }
+
 new AddressBook();
