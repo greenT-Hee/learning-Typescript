@@ -7,7 +7,7 @@ interface PhoneNumberDictionary {
 interface Contact {
   name: string;
   address: string;
-  phones: PhoneNumberDictionary;
+  phones: PhoneNumberDictionary; // 인터페이스 안의 인터페이스
 }
 
 enum PhoneType {
